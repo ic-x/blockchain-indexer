@@ -1,0 +1,8 @@
+services:
+  blockchain-indexer:
+    build: .
+    command: >
+      ./bin/indexer run
+      --rpc=https://holesky.infura.io/v3/<YOUR_API_KEY>
+      --start=2389850
+      --out=/blocks.log
