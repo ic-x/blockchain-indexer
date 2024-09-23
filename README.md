@@ -43,13 +43,13 @@ The following flags are available for configuring the tool directly from the com
 To run the application locally, you can use command-line flags or a configuration file:
 
 ```bash
-go run main.go run --rpc=https://holesky.infura.io/v3/<YOUR_API_KEY> --start=1 --out=blocks.log
+go build -o ./bin/indexer ./main.go && ./bin/indexer run --rpc=https://holesky.infura.io/v3/<YOUR_API_KEY> --start=1 --out=blocks.log
 ```
 
 Alternatively, use WebSocket for RPC:
 
 ```bash
-go run main.go run --rpc=wss://holesky.infura.io/ws/v3/<YOUR_API_KEY> --start=1 --out=blocks.log
+go build -o ./bin/indexer ./main.go && ./bin/indexer run --rpc=wss://holesky.infura.io/ws/v3/<YOUR_API_KEY> --start=1 --out=blocks.log
 ```
 
 ### Running with Docker Compose
@@ -57,7 +57,7 @@ go run main.go run --rpc=wss://holesky.infura.io/ws/v3/<YOUR_API_KEY> --start=1 
 To run the application using Docker Compose, use the following commands:
 
 ```bash
-docker-compose up --build
+docker-compose build
 docker-compose up
 ```
 
